@@ -47,7 +47,7 @@ private:
 public:
 	int add_techear(teacher techears)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation
 	{
-		return t1.add_techear(techears);
+		return t1.Add_techear(techears);
 
 	}
 

@@ -18,15 +18,7 @@ int* teacher::get_student_id()
 	return student_id;
 }
 
-string teacher::get_phone()
-{
-	return string();
-}
 
-string teacher::get_name()
-{
-	return string();
-}
 
 double teacher::get_saleary()
 {

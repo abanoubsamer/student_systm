@@ -5,7 +5,7 @@ class Data
 {
 	public:
 	
-	 static	ss Student[25];
+	static	ss Student[25];
 	static	int index_Student;
 	static	int id_student;
 

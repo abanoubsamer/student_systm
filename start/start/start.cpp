@@ -177,12 +177,13 @@ void add_new_student()
     cin >> gpa;
     s1.set_gpa(gpa);
   student_countol st;
-  // (st.add_student(s1) == -1)
+  int id = st.add_student(s1);
+   if (!id)
   
-  //    cout << "filed Add Procces" << endl;
+      cout << "filed Add Procces" << endl;
   
-  //else
-   cout << "Success Added with id ["<< st.add_student(s1) <<"]" << endl;
+  else
+   cout << "Success Added Student with id ["<< id <<"]" << endl;
    
 }
 
@@ -202,7 +203,13 @@ void add_new_course()
    cin >> hour;
    c1.set_hour(hour);
    course_countrol cc1;
-  cout << "Success Added with id [" << cc1.addd_course(c1) << "]" << endl;
+   int id = cc1.addd_course(c1);
+   if (!id)
+
+       cout << "filed Add Procces" << endl;
+
+   else
+       cout << "Success Added Course with id [" << id << "]" << endl;
 
 }
 
@@ -213,6 +220,8 @@ void add_new_techear()
 {
     teacher t1;
     string name;
+    int age;
+    string phone;
     string speciales;
     double saleary;
    
@@ -220,6 +229,12 @@ void add_new_techear()
     cout << "Enter Techear Name :";
     cin >> name;
     t1.set_name(name);
+    cout << "Enter Techear age :";
+    cin >> age;
+    t1.set_age(age);
+    cout << "Enter Techear phone :";
+    cin >> phone;
+    t1.set_phone(phone);
     cout << "Enter Student saleary :";
     cin >> saleary;
     t1.set_saleary(saleary);
@@ -227,7 +242,13 @@ void add_new_techear()
     cin >> speciales;
     t1.set_speciales(speciales);
     techear_countrol tc1;
-    cout << "Success Added with id [" << tc1.add_techear(t1) << "]" << endl;
+    int id = tc1.add_techear(t1);
+    if (!id)
+
+        cout << "filed Add Procces" << endl;
+
+    else
+        cout << "Success Added Techear with id [" << id << "]" << endl;
 
 }
 
