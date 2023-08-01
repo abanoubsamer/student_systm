@@ -8,7 +8,7 @@ void showlist(string value);
 void add_new_student();
 void add_new_course();
 void add_new_techear();
-
+int id;
 int main()
 {
 
@@ -147,7 +147,7 @@ void showlist(string value)
 }
 
 ////////////////// addadd_new_student \\\\\\\\\\\\\\\\\
-
+ 
 void add_new_student()
 {
     ss s1;
@@ -177,7 +177,7 @@ void add_new_student()
     cin >> gpa;
     s1.set_gpa(gpa);
   student_countol st;
-  int id = st.add_student(s1);
+   id = st.add_student(s1);
    if (!id)
   
       cout << "filed Add Procces" << endl;
@@ -203,7 +203,7 @@ void add_new_course()
    cin >> hour;
    c1.set_hour(hour);
    course_countrol cc1;
-   int id = cc1.addd_course(c1);
+   id = cc1.addd_course(c1);
    if (!id)
 
        cout << "filed Add Procces" << endl;
@@ -242,7 +242,7 @@ void add_new_techear()
     cin >> speciales;
     t1.set_speciales(speciales);
     techear_countrol tc1;
-    int id = tc1.add_techear(t1);
+    id = tc1.add_techear(t1);
     if (!id)
 
         cout << "filed Add Procces" << endl;

@@ -1,8 +1,5 @@
-﻿  Data.cpp
-  Sarves.cpp
-  repo.cpp
-  ss.cpp
+﻿  Sarves.cpp
   start.cpp
-  teacher.cpp
+  validation.cpp
   Generating Code...
   start.vcxproj -> D:\programing c++\student_systm\start\x64\Debug\start.exe

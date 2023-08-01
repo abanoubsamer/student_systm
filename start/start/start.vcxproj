@@ -137,6 +137,7 @@
     <ClCompile Include="ss.cpp" />
     <ClCompile Include="start.cpp" />
     <ClCompile Include="teacher.cpp" />
+    <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cours.h" />
