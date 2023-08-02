@@ -2,18 +2,22 @@
 //
 #include<iostream>
 #include"countrol.cpp"
-
+int id;
+int process;
 void display();
 void showlist(string value);
 void add_new_student();
 void add_new_course();
 void add_new_techear();
-int id;
+void switch_student();
+void switch_course();
+void switch_techear();
+
 int main()
 {
 
     int exit = 0;
-    int process;
+   
     while (true)
     {
          display();
@@ -23,84 +27,20 @@ int main()
         {
         case 1:
              showlist("Student");
-         
              cin >> process;
-             switch (process)
-             {
-             case 1:
-                 add_new_student();
-                 break;
-             case 2:
-                 cout << "Remove procces" << endl;
-                 break;
-             case 3:
-                 cout << "Edit procces" << endl;
-                 break;
-             case 4:
-                 cout << "Show procces" << endl;
-                 break;
-             case 5:
-                 cout << "Exit procces" << endl;
-                 break;
-             default:
-                 cout << "Invaled Choose" << endl;
-                 break;
-             } 
-           
+             switch_student();
              
             break;
         case 2:
             showlist("Teacher");
             cin >> process;
-            switch (process)
-            {
-            case 1:
-                add_new_techear();
-                break;
-            case 2:
-                cout << "Remove Teacher" << endl;
-                break;
-            case 3:
-                cout << "Edit Teacher" << endl;
-                break;
-            case 4:
-                cout << "Show Teacher" << endl;
-                break;
-            case 5:
-                cout << "Exit Teacher" << endl;
-                break;
-            default:
-                cout << "Invaled Choose" << endl;
-                break;
-            }
-
-
+            switch_techear();
 
             break;
         case 3:
             showlist("Course");
             cin >> process;
-            switch (process)
-            {
-            case 1:
-                add_new_course();
-                break;
-            case 2:
-                cout << "Remove Course" << endl;
-                break;
-            case 3:
-                cout << "Edit Course" << endl;
-                break;
-            case 4:
-                cout << "Show Course" << endl;
-                break;
-            case 5:
-                cout << "Exit Course" << endl;
-                break;
-            default:
-                cout << "Invaled Choose" << endl;
-                break;
-            }
+            switch_course();
 
             break;
         case 4:
@@ -252,11 +192,94 @@ void add_new_techear()
 
 }
 
+////////////////// switch_student \\\\\\\\\\\\\\\\\
+
+void switch_student()
+{
+
+    switch (process)
+    {
+    case 1:
+        add_new_student();
+        break;
+    case 2:
+        cout << "Remove procces" << endl;
+        break;
+    case 3:
+        cout << "Edit procces" << endl;
+        break;
+    case 4:
+        cout << "Show procces" << endl;
+        break;
+    case 5:
+        cout << "Exit procces" << endl;
+        break;
+    default:
+        cout << "Invaled Choose" << endl;
+        break;
+    }
 
 
 
 
+}
 
+////////////////// switch_course \\\\\\\\\\\\\\\\\
+
+void switch_course()
+{
+
+    switch (process)
+    {
+    case 1:
+        add_new_course();
+        break;
+    case 2:
+        cout << "Remove Course" << endl;
+        break;
+    case 3:
+        cout << "Edit Course" << endl;
+        break;
+    case 4:
+        cout << "Show Course" << endl;
+        break;
+    case 5:
+        cout << "Exit Course" << endl;
+        break;
+    default:
+        cout << "Invaled Choose" << endl;
+        break;
+    }
+
+}
+
+////////////////// switch_techear \\\\\\\\\\\\\\\\\
+
+void switch_techear()
+{
+    switch (process)
+    {
+    case 1:
+        add_new_techear();
+        break;
+    case 2:
+        cout << "Remove Teacher" << endl;
+        break;
+    case 3:
+        cout << "Edit Teacher" << endl;
+        break;
+    case 4:
+        cout << "Show Teacher" << endl;
+        break;
+    case 5:
+        cout << "Exit Teacher" << endl;
+        break;
+    default:
+        cout << "Invaled Choose" << endl;
+        break;
+    }
+
+}
 
 
 

@@ -1,5 +1,9 @@
 #include"repo.cpp"
 
+
+
+/////////////////////////////       hna b3ml cheak 3la data ale gya ly  student       \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 class validation_student
 {
 public:
@@ -54,6 +58,7 @@ public:
 
 };
 
+/////////////////////////////       hna b3ml cheak 3la data ale gya ly  course      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 class validation_courses
 {
@@ -77,6 +82,8 @@ public:
 
 };
 
+/////////////////////////////       hna b3ml cheak 3la data ale gya ly  techear      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 class validation_techear
 {
 public:
@@ -89,7 +96,7 @@ public:
 			)
 		{
 			cout << " Invalid Name !" << endl;
-			cout << techears.get_name() << endl;
+			
 		}
 
 		else if (techears.get_age() >= 60 || //hna bnklm lw d5l rkm aktr mn 60 sna    
@@ -127,6 +134,19 @@ public:
 
 		return 0;
 
+	}
+
+
+};
+
+/////////////////////////////       hna deh class gwah fun 3l4an t3ml clean code ly serves      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+class validation_sarves
+{
+public:
+	void full_data(string type)
+	{
+		cout << "FULL Area Of "<<type<<"!" << endl;
 	}
 
 

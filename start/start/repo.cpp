@@ -20,7 +20,7 @@ public:
 	{
 		if (data.index_Student > 24)
 		{
-			cout << "the area of student is full\n";
+			return 0;
 		}
 		else
 		{
@@ -52,7 +52,7 @@ public:
 	{
 		if (data.index_coursess > 24)
 		{
-			cout << "the area of coursess is full\n";
+			return 0;
 		}
 		else
 		{

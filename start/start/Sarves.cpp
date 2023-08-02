@@ -16,18 +16,24 @@ class student_sarves_imp :public student_sarves
 private:
 	student_prository_imp s1;
 	validation_student v1;
+	validation_sarves vs1;
 public:
 	int Add_student(ss student)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation==(y3ne hn3ml check 3la ale gylna)
 	{
-		if(!v1.validation_new_student(student))//hna deh fun bt3ml validation 3la bynat al talb
-			
-		    return 0;
-			
-		else
+		if (v1.validation_new_student(student))//hna deh fun bt3ml 1 y3ne b3tt true
+		{
+			int id = s1.add_student(student);
+			if (!id)
+				vs1.full_data("Student");
+       else
 			 {
-				 return s1.add_student(student);
+				return id;
 			 }
-	
+			
+		}
+		    
+			
+	         return 0;//hna m3anha anha md5lt4 fe wal if statment
 	}
 
 	
@@ -46,16 +52,27 @@ class course_sarves_imp :public course_sarves
 private:
 	course_prository_imp c1;
 	validation_courses v1;
+	validation_sarves vs1;
 
 public:
 	int addd_course(cours course)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation
 	{
-		if (!v1.validationcourse(course))
-			return 0;
-		else
-      return c1.add_course(course);
+		if (v1.validationcourse(course))
+		{
+			int id = c1.add_course(course);
+			if (!id)
+			{
+				vs1.full_data("Course");
+			}
+			else
+			{
+				return id;
+			}
 
-		
+		}
+			
+
+		return 0;
 	}
 
 
@@ -76,17 +93,28 @@ private:
 
 	teacher_prository_imp t1;
 	validation_techear v1;
+	validation_sarves vs1;
 	
 public:
 	int Add_techear(teacher techears)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation
 	{
 		
-		if (!v1.validationtechear(techears))
-			return 0;
-		else
+		if (v1.validationtechear(techears))
 		{
-         return t1.add_teacher(techears);
+			int id = t1.add_teacher(techears);
+			if (!id)
+			{
+				vs1.full_data("Course");
+			}
+			else
+			{
+				return id;
+			}
+
 		}
+
+
+		return 0;
 		
 
 
