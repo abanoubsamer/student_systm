@@ -1,4 +1,7 @@
 #include "Data.h"
+
+
+
 ss  Data::Student[25];
 int  Data::index_Student = 0;
 int Data::id_student = 0;

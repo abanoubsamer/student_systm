@@ -219,9 +219,6 @@ void switch_student()
         break;
     }
 
-
-
-
 }
 
 ////////////////// switch_course \\\\\\\\\\\\\\\\\
