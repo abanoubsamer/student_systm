@@ -22,7 +22,7 @@ void ss::set_teacher(teacher a[5])//t1,t2,t3,t4,t5
 	 this-> arr[i] = a[i];
 }
 
-void ss::set_teacher(cours arr_co[5])
+void ss::set_cours(cours arr_co[5])
 {
 	for (int i = 0;i < sizeof(arr_co) / sizeof(arr_co[0]);i++)//hna a7na 7tna funtion sizeof btrg3 al size bta3 al array
 	this->arr_cours[i] = arr_co[i];

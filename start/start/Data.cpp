@@ -1,17 +1,16 @@
 #include "Data.h"
 
 
+// Initialize static members
+ss Data::Student[25] = {}; // Default initialization, assuming ss has a default constructor
+int Data::index_Student = 1;
+int Data::id_student = 1;
 
-ss  Data::Student[25];
-int  Data::index_Student = 0;
-int Data::id_student = 0;
+cours Data::coursess[25] = {}; // Default initialization, assuming cours has a default constructor
+int Data::id_coursess = 1;
+int Data::index_coursess = 1;
 
-int Data::id_coursess = 0;
-cours Data::coursess[25];
-int  Data::index_coursess = 0;
-
-
-int  Data::index_teacher = 0;
-teacher Data::theachers[25];
-int Data::id_teacher = 0;
+teacher Data::theachers[25] = {}; // Default initialization, assuming teacher has a default constructor
+int Data::index_teacher = 1;
+int Data::id_teacher = 1;
 

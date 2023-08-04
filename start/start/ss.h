@@ -20,11 +20,16 @@ public:
 	void set_gpa(float gp);
 	void set_level(int l);
 	void set_speciales(string sp);
+
 	void set_teacher(teacher a[5]);
-	void set_teacher(cours arr_c [5]);
+	void set_cours(cours arr_c [5]);
+
 	float get_gpa();
 	int get_level();
+
+
 	string get_speciales();
+
 	teacher *get_techear();
     cours* get_courses();
 };

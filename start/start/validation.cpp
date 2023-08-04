@@ -2,6 +2,8 @@
 
 
 
+
+
 /////////////////////////////       hna b3ml cheak 3la data ale gya ly  student       \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 class validation_student
@@ -20,7 +22,7 @@ public:
 		else if (student.get_age() >= 30 || //hna bnklm lw d5l rkm aktr mn 30 sna 
 			student.get_age() <= 18) {//we hna lw d5l rkm a2l mn 18 sana 
 			cout << " Invalid Age !" << endl;
-		}
+		    }
 		else  if (student.get_phone()[0] != '0' || student.get_phone()[1] != '1' ||//hna ana msbt 01 3l4an kol arkam msr btbd2h bha y3ne lw arkm m4 awlh 01 kdh dh 8lt
 
 			(
@@ -33,6 +35,7 @@ public:
 
 			)
 
+			
 		{
 			cout << " Invalid Number !" << endl;
 		}
@@ -151,3 +154,5 @@ public:
 
 
 };
+
+

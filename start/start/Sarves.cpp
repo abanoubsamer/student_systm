@@ -2,23 +2,23 @@
 
 
 
-
-
-////////////////////////////       student      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-// interface student_sarves
+  ////////////////////////////       student      \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+ // interface student_sarves
 class student_sarves {
 public:
-	virtual int Add_student(ss student) = 0;
+	virtual int Add_student_serves(ss student) = 0;
+	virtual ss show_student_sarves(int id) = 0;
 };
 //class student_sarves imp
 class student_sarves_imp :public student_sarves
 { 
 private:
 	student_prository_imp s1;
+	ss student;
 	validation_student v1;
 	validation_sarves vs1;
 public:
-	int Add_student(ss student)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation==(y3ne hn3ml check 3la ale gylna)
+	int Add_student_serves(ss student)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation==(y3ne hn3ml check 3la ale gylna)
 	{
 		if (v1.validation_new_student(student))//hna deh fun bt3ml 1 y3ne b3tt true
 		{
@@ -35,7 +35,21 @@ public:
 			
 	         return 0;//hna m3anha anha md5lt4 fe wal if statment
 	}
+	ss show_student_sarves(int id)
+	{
+		student = s1.show_student_by_id(id);
+		if (student.get_id()==0)
+		{
+			student.set_id(0);
+			return 	student;
+			
+		}
+		else
+		{
+			return student;
+		}
 
+	}
 	
 
 };
@@ -44,7 +58,7 @@ public:
 // interface course_sarves
 class course_sarves {
 public:
-	virtual int addd_course(cours course) = 0;
+	virtual int addd_course_sarves(cours course) = 0;
 };
 //class course_sarves imp
 class course_sarves_imp :public course_sarves
@@ -55,7 +69,7 @@ private:
 	validation_sarves vs1;
 
 public:
-	int addd_course(cours course)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation
+	int addd_course_sarves(cours course)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation
 	{
 		if (v1.validationcourse(course))
 		{
@@ -84,7 +98,7 @@ public:
 /// interface teacher_sarves
 class techear_sarves {
 public:
-	virtual int Add_techear(teacher techears) = 0;
+	virtual int Add_techear_sarves(teacher techears) = 0;
 };
 //class teacher_sarves imp
 class techear_sarves_imp :public techear_sarves
@@ -96,7 +110,7 @@ private:
 	validation_sarves vs1;
 	
 public:
-	int Add_techear(teacher techears)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation
+	int Add_techear_sarves(teacher techears)//hna a7na ndna al fun bta3t al prository 3l4an hn3ml validation
 	{
 		
 		if (v1.validationtechear(techears))

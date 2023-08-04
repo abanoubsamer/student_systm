@@ -1,7 +1,10 @@
 // start.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+
 #include<iostream>
 #include"countrol.cpp"
+
+
 int id;
 int process;
 void display();
@@ -12,6 +15,10 @@ void add_new_techear();
 void switch_student();
 void switch_course();
 void switch_techear();
+void show_process();
+void Show_Student_id();
+
+
 
 int main()
 {
@@ -65,12 +72,42 @@ void display()
 {
     cout << "\t\t\t******************* Management System *******************" << endl;
     cout << "Please Enter your process you need to do !" << endl;
-    cout << " 1 - Add Student" << "\t\t" << " 2 - Add Teacher" << endl;
-    cout << " 3 - Add Course" << "\t\t\t" << " 4 - Exit " << endl;
+    cout << " 1 - About Student" << "\t\t" << " 2 - About Teacher" << endl;
+    cout << " 3 - About Course" << "\t\t" << " 4 - Exit " << endl;
   
 
 }
 
+////////////////// show list the Process system \\\\\\\\\\\\\\\\\
+
+void show_process()
+{
+    switch (process)
+    {
+    case 1:
+        cout << "\t\t\t\t******************* Add Process *******************" << endl;
+        break;
+    case 2:
+        cout << "\t\t\t\t******************* Remove Process *******************" << endl;
+        break;
+    case 3:
+        cout << "\t\t\t\t******************* Edit Process *******************" << endl;
+        break;
+    case 4:
+        cout << "\t\t\t\t******************* Show Process *******************" << endl;
+        break;
+    case 5:
+        cout << "\t\t\t\t******************* Show By Id Process *******************" << endl;
+        break;
+    case 6:
+        cout << "\t\t\t\t******************* Exit Process *******************" << endl;
+        break;
+
+    
+    }
+
+
+}
 
 ////////////////// show list the sub list system \\\\\\\\\\\\\\\\\
 
@@ -82,7 +119,7 @@ void showlist(string value)
     cout << "Please Enter your process you need to do !" << endl;
     cout << " 1 - Add "<<value << "\t\t" << " 2 - Remove " << value << endl;
     cout << " 3 - Edit " << value << "\t\t"<<" 4 - Show " << value << endl;
-    cout << " 5 - Exit " << endl;
+    cout << " 5 - Show "<<value << "By ID\t\t"<< " 6 - Exit " << endl;
 
 }
 
@@ -97,7 +134,6 @@ void add_new_student()
     string phone;
     int age;
     int level;
-    cout << "\t\t\t\t******************* Add process *******************"<<endl;
     cout << "Enter Student Name :";
     cin >> name;
     s1.set_name(name);
@@ -117,7 +153,7 @@ void add_new_student()
     cin >> gpa;
     s1.set_gpa(gpa);
   student_countol st;
-   id = st.add_student(s1);
+   id = st.add_student_control(s1);
    if (!id)
   
       cout << "filed Add Procces" << endl;
@@ -143,7 +179,7 @@ void add_new_course()
    cin >> hour;
    c1.set_hour(hour);
    course_countrol cc1;
-   id = cc1.addd_course(c1);
+   id = cc1.addd_course_countol(c1);
    if (!id)
 
        cout << "filed Add Procces" << endl;
@@ -182,7 +218,7 @@ void add_new_techear()
     cin >> speciales;
     t1.set_speciales(speciales);
     techear_countrol tc1;
-    id = tc1.add_techear(t1);
+    id = tc1.add_techear_control(t1);
     if (!id)
 
         cout << "filed Add Procces" << endl;
@@ -200,6 +236,7 @@ void switch_student()
     switch (process)
     {
     case 1:
+        show_process();
         add_new_student();
         break;
     case 2:
@@ -212,8 +249,13 @@ void switch_student()
         cout << "Show procces" << endl;
         break;
     case 5:
+        show_process();
+        Show_Student_id();
+        break;
+    case 6:
         cout << "Exit procces" << endl;
         break;
+
     default:
         cout << "Invaled Choose" << endl;
         break;
@@ -226,12 +268,15 @@ void switch_student()
 void switch_course()
 {
 
+
+
     switch (process)
     {
     case 1:
         add_new_course();
         break;
     case 2:
+
         cout << "Remove Course" << endl;
         break;
     case 3:
@@ -241,6 +286,9 @@ void switch_course()
         cout << "Show Course" << endl;
         break;
     case 5:
+        cout << "Show Course By Id procces" << endl;
+        break;
+    case 6:
         cout << "Exit Course" << endl;
         break;
     default:
@@ -269,6 +317,9 @@ void switch_techear()
         cout << "Show Teacher" << endl;
         break;
     case 5:
+        cout << "Show Course By Id procces" << endl;
+        break;
+    case 6:
         cout << "Exit Teacher" << endl;
         break;
     default:
@@ -276,6 +327,16 @@ void switch_techear()
         break;
     }
 
+}
+
+void Show_Student_id()
+{
+
+    cout << "Please Enter Id Student" << endl;
+    cin >> id;
+    student_countol s1;
+    s1.show_student_by_id_control(id);
+     
 }
 
 

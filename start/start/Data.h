@@ -1,11 +1,17 @@
 #pragma once
+#define DATA_H
 #include"ss.h"
 
-class Data
+
+
+
+ class Data
 {
+
+
 	public:
-	
-	static	ss Student[25];
+
+	static	 ss Student[25];
 	static	int index_Student;
 	static	int id_student;
 
@@ -17,20 +23,9 @@ class Data
 	static	int index_teacher;
 	static	int id_teacher;
 
-
+	
 };
 
-ss  Data::Student[25];
-int  Data::index_Student = 0;
-int Data::id_student = 0;
 
-int Data::id_coursess = 0;
-cours Data::coursess[25];
-int  Data::index_coursess = 0;
-
-
-int  Data::index_teacher = 0;
-teacher Data::theachers[25];
-int Data::id_teacher = 0;
-
+ 
 

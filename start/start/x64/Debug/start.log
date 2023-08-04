@@ -1,2 +1,6 @@
-﻿  validation.cpp
+﻿  start.cpp
+D:\programing c++\student_systm\start\start\repo.cpp(108): warning C4715: 'course_prository_imp::show_cours_by_id': not all control paths return a value
+D:\programing c++\student_systm\start\start\repo.cpp(57): warning C4715: 'student_prository_imp::show_student_by_id': not all control paths return a value
+D:\programing c++\student_systm\start\start\repo.cpp(159): warning C4715: 'teacher_prository_imp::show_teacher_by_id': not all control paths return a value
+countrol.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
   start.vcxproj -> D:\programing c++\student_systm\start\x64\Debug\start.exe
