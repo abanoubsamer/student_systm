@@ -86,7 +86,7 @@ public:
 		}
 		else
 		{
-			course.set_id(++d2.id_coursess);
+			course.set_id(d2.id_coursess++);
 			d2.coursess[d2.index_coursess++] = course;
 			
 		}
@@ -136,7 +136,7 @@ public:
 		}
 		else
 		{
-			tech.set_id(++d3.id_teacher);
+			tech.set_id(d3.id_teacher++);
 			d3.theachers[d3.index_teacher++] = tech;
 			
 		}

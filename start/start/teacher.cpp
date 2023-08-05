@@ -24,3 +24,8 @@ double teacher::get_saleary()
 {
 	return saleary;
 }
+
+string teacher::get_speciales()
+{
+	return speciales;
+}

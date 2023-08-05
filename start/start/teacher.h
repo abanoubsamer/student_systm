@@ -14,4 +14,6 @@ public:
 	void set_student_id(int s_id[]);
 	int *get_student_id();
 	double get_saleary();
+	string get_speciales();
+
 };

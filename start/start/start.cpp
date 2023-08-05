@@ -17,6 +17,9 @@ void switch_course();
 void switch_techear();
 void show_process();
 void Show_Student_id();
+void Show_cours_id();
+void Show_techear_id();
+
 
 
 
@@ -146,9 +149,15 @@ void add_new_student()
     cout << "Enter Student level :";
     cin >> level;
     s1.set_level(level);
-    cout << "Enter Student speciales :";
-    cin >> speciale;
-    s1.set_speciales(speciale);
+    if (level > 2)      // hna ana oltlh lw hwa fe sana 3 kdh hyt5ss
+    {
+        cout << "Enter Student speciales :";
+        cin >> speciale;
+        s1.set_speciales(speciale);
+    }
+    else {          // hna lw hwa a2l mn sana 3 kdh dh mlho4 t5ss
+        s1.set_speciales("default");
+    }
     cout << "Enter Student GPA :";
     cin >> gpa;
     s1.set_gpa(gpa);
@@ -171,8 +180,7 @@ void add_new_course()
     cours c1;
     string name;
     int hour ;
-    cout << "\t\t\t\t******************* Add process *******************" << endl;
-    cout << "Enter course Name :";
+   cout << "Enter course Name :";
     cin >> name;
    c1.set_name(name);
    cout << "Enter Course Hour :";
@@ -200,8 +208,6 @@ void add_new_techear()
     string phone;
     string speciales;
     double saleary;
-   
-    cout << "\t\t\t\t******************* Add process *******************" << endl;
     cout << "Enter Techear Name :";
     cin >> name;
     t1.set_name(name);
@@ -211,12 +217,13 @@ void add_new_techear()
     cout << "Enter Techear phone :";
     cin >> phone;
     t1.set_phone(phone);
-    cout << "Enter Student saleary :";
-    cin >> saleary;
-    t1.set_saleary(saleary);
     cout << "Enter Techear speciales :";
     cin >> speciales;
     t1.set_speciales(speciales);
+    cout << "Enter Student saleary :";
+    cin >> saleary;
+    t1.set_saleary(saleary);
+    
     techear_countrol tc1;
     id = tc1.add_techear_control(t1);
     if (!id)
@@ -273,6 +280,7 @@ void switch_course()
     switch (process)
     {
     case 1:
+        show_process();
         add_new_course();
         break;
     case 2:
@@ -286,7 +294,8 @@ void switch_course()
         cout << "Show Course" << endl;
         break;
     case 5:
-        cout << "Show Course By Id procces" << endl;
+        show_process();
+        Show_cours_id();
         break;
     case 6:
         cout << "Exit Course" << endl;
@@ -305,6 +314,7 @@ void switch_techear()
     switch (process)
     {
     case 1:
+        show_process();
         add_new_techear();
         break;
     case 2:
@@ -317,7 +327,8 @@ void switch_techear()
         cout << "Show Teacher" << endl;
         break;
     case 5:
-        cout << "Show Course By Id procces" << endl;
+        show_process();
+        Show_techear_id();
         break;
     case 6:
         cout << "Exit Teacher" << endl;
@@ -329,25 +340,46 @@ void switch_techear()
 
 }
 
+////////////////// Show_Student_id \\\\\\\\\\\\\\\\\
+
 void Show_Student_id()
 {
 
-    cout << "Please Enter Id Student" << endl;
-    cin >> id;
+    cout << "Please Enter Id Student = " ;
+    cin >> id; cout << endl;
     student_countol s1;
     s1.show_student_by_id_control(id);
      
 }
 
+////////////////// Show_cours_id \\\\\\\\\\\\\\\\\
 
 
+void Show_cours_id()
+{
+
+    cout << "Please Enter Id Cours = ";
+    cin >> id; cout << endl;
+    course_countrol c1;
+    c1.show_student_by_id_control(id);
+
+}
 
 
+////////////////// Show_techear_id \\\\\\\\\\\\\\\\\
 
-//int * student::get_techear()
-//{
-//	return arr ;//hna a7na rg3na al array of teacher by pointer 3l4an anta m4 ht3rf trg3 al array mn 8er pointer
-//}
+void Show_techear_id()
+{
+
+    cout << "Please Enter Id Techear = " ;
+    cin >> id; cout << endl;
+
+    techear_countrol t1;
+    t1.show_student_by_id_control(id);
+
+}
+
+
 
 
 

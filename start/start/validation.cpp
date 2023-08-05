@@ -39,6 +39,18 @@ public:
 		{
 			cout << " Invalid Number !" << endl;
 		}
+		else if (student.get_level()>4|| student.get_level() == 0)
+		{
+			cout << " Invalid Level !" << endl;
+
+		}
+		else if (student.get_level()>2 && student.get_speciales() != "acconting" && student.get_speciales() != "business" && student.get_speciales() != "mis")
+			{
+				cout << " Invalid Speciales !" << endl;
+			}
+			
+
+	
 
 		else if (student.get_gpa() < 0 || student.get_gpa() >= 4)
 		{
@@ -120,6 +132,11 @@ public:
 
 		{
 			cout << " Invalid Number !" << endl;
+
+		}
+		else if (techears.get_speciales() != "acconting" && techears.get_speciales() != "business" && techears.get_speciales() != "mis")
+		{
+			cout << " Invalid Speciales !" << endl;
 		}
 
 		else if (techears.get_saleary() < 5000 || techears.get_saleary() > 15000)//hna bnklm an lw ratb al thechear mykon4 a2l mn 5000 wla aktr mn 15000
@@ -151,7 +168,10 @@ public:
 	{
 		cout << "FULL Area Of "<<type<<"!" << endl;
 	}
-
+	void no_exist(string type, int id)
+	{
+		cout <<type<< " Wiht Id [" << id << "] Not Exist" << endl;
+	}
 
 };
 

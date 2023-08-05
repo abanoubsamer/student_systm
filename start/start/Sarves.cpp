@@ -40,14 +40,12 @@ public:
 		student = s1.show_student_by_id(id);
 		if (student.get_id()==0)
 		{
-			student.set_id(0);
-			return 	student;
+			vs1.no_exist("Student", id);
 			
 		}
-		else
-		{
+		
 			return student;
-		}
+		
 
 	}
 	
@@ -59,12 +57,14 @@ public:
 class course_sarves {
 public:
 	virtual int addd_course_sarves(cours course) = 0;
+	virtual cours show_course_sarves(int id) = 0;
 };
 //class course_sarves imp
 class course_sarves_imp :public course_sarves
 {
 private:
 	course_prository_imp c1;
+	cours cours1;
 	validation_courses v1;
 	validation_sarves vs1;
 
@@ -88,6 +88,21 @@ public:
 
 		return 0;
 	}
+	cours show_course_sarves(int id)
+	{
+		cours1 = c1.show_cours_by_id(id);
+		if (cours1.get_id() == 0)
+		{
+			vs1.no_exist("Course", id);
+
+
+		}
+		
+		
+			return cours1;
+		
+
+	}
 
 
 
@@ -99,12 +114,13 @@ public:
 class techear_sarves {
 public:
 	virtual int Add_techear_sarves(teacher techears) = 0;
+	virtual teacher show_techear_sarves(int id) = 0;
 };
 //class teacher_sarves imp
 class techear_sarves_imp :public techear_sarves
 {
 private:
-
+	teacher teach1;
 	teacher_prository_imp t1;
 	validation_techear v1;
 	validation_sarves vs1;
@@ -118,7 +134,7 @@ public:
 			int id = t1.add_teacher(techears);
 			if (!id)
 			{
-				vs1.full_data("Course");
+				vs1.full_data("Techaer");
 			}
 			else
 			{
@@ -129,11 +145,21 @@ public:
 
 
 		return 0;
-		
-
-
 	}
 
+	teacher show_techear_sarves(int id)
+	{
+		teach1 = t1.show_teacher_by_id(id);
+		if (teach1.get_id() == 0)
+		{
+		
+			vs1.no_exist("techaer", id);
 
+		}
+		
+			return teach1;
+		
+
+	}
 
 };
