@@ -25,6 +25,8 @@ teacher Enter_Data_techear();
 void update_Data_student();
 void update_Data_cours();
 void update_Data_techear();
+void check_id(int id, string type);
+
 
 
 
@@ -140,12 +142,7 @@ void add_new_student()
     
   student_countol st;
    id = st.add_student_control(s1);
-   if (!id)
-  
-      cout << "filed Add Procces" << endl;
-  
-  else
-   cout << "Success Added Student with id ["<< id <<"]" << endl;
+   check_id(id, "Student");
    
 }
 
@@ -157,12 +154,7 @@ void add_new_course()
     cours c1 = Enter_Data_cours();
    course_countrol cc1;
    id = cc1.addd_course_countol(c1);
-   if (!id)
-
-       cout << "filed Add Procces" << endl;
-
-   else
-       cout << "Success Added Course with id [" << id << "]" << endl;
+   check_id(id, "Course");
 
 }
 
@@ -174,12 +166,7 @@ void add_new_techear()
     teacher t1=Enter_Data_techear();
     techear_countrol tc1;
     id = tc1.add_techear_control(t1);
-    if (!id)
-
-        cout << "filed Add Procces" << endl;
-
-    else
-        cout << "Success Added Techear with id [" << id << "]" << endl;
+    check_id(id, "Techear");
 
 }
 
@@ -454,6 +441,19 @@ void update_Data_techear()
     t1.set_id(id);
    techear_countrol tc1;
     tc1.edit_techear_control(t1);
+}
+
+
+////////////////// check_id \\\\\\\\\\\\\\\\\
+
+void check_id(int id, string type)
+{
+    if (!id)
+
+        cout << "filed Add Procces" << endl;
+
+    else
+        cout << "Success Added " <<type<<" with id[" << id << "]" << endl;
 }
 
 

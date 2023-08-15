@@ -52,13 +52,18 @@ public:
 	
 	void edit_student_sarves(ss student)
 	{
-		int index = s1.edit_student(student);
-		if (!index)
+		if (v1.validation_new_student(student))
 		{
-			vs1.no_exist("Student", student.get_id());
+			int index = s1.edit_student(student);
+			if (!index)
+			{
+				vs1.no_exist("Student", student.get_id());
+			}
+			else
+				cout << "Sucess Edit Student With Id [" << student.get_id() << "]" << endl;
+
 		}
-		else
-			cout << "Sucess Edit Student With Id [" << student.get_id() << "]" << endl;
+		
 	}
 
 };
@@ -118,13 +123,18 @@ public:
 
 	void edit_course_sarves(cours course)
 	{
-		int index = c1.edit_course(course);
-		if (!index)
+		if (v1.validationcourse(course))
 		{
-			vs1.no_exist("Course", course.get_id());
+			int index = c1.edit_course(course);
+			if (!index)
+			{
+				vs1.no_exist("Course", course.get_id());
+			}
+			else
+				cout << "Sucess Edit Course With Id [" << course.get_id() << "]" << endl;
+
 		}
-		else
-			cout << "Sucess Edit Course With Id [" << course.get_id() << "]" << endl;
+		
 	}
 
 
@@ -187,13 +197,17 @@ public:
 
 	void edit_techear_sarves(teacher techears)
 	{
-		int index = t1.edit_teacher(techears);
-		if (!index)
+		if (v1.validationtechear(techears))
 		{
-			vs1.no_exist("Techaer", techears.get_id());
+			int index = t1.edit_teacher(techears);
+			if (!index)
+			{
+				vs1.no_exist("Techaer", techears.get_id());
+			}
+			else
+				cout << "Sucess Edit Techaer With Id [" << techears.get_id() << "]" << endl;
 		}
-		else
-			cout << "Sucess Edit Techaer With Id [" << techears.get_id() << "]" << endl;
+		
 	}
 
 };
