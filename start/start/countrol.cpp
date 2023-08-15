@@ -38,7 +38,10 @@ public:
 		s2.edit_student_sarves(student);
 	}
 
-
+	void remove_student_control(int id)
+	{
+		s2.remove_student_sarves(id);
+	}
 
 
 };
@@ -83,6 +86,12 @@ public:
 		c1.edit_course_sarves(course);
 	}
 
+	void remove_course_control(int id)
+	{
+		c1.remove_course_sarves(id);
+	}
+
+
 };
 /////////////////////////////    teacher    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///  teacher_countorl
@@ -124,6 +133,10 @@ public:
 	void edit_techear_control(teacher techears)
 	{
 		t1.edit_techear_sarves(techears);
+	}
+	void remove_techear_control(int id)
+	{
+		t1.remove_techear_sarves(id);
 	}
 
 };

@@ -9,12 +9,13 @@ public:
 	virtual int Add_student_serves(ss student) = 0;
 	virtual ss show_student_sarves(int id) = 0;
 	virtual void edit_student_sarves(ss student) = 0;
+	virtual void remove_student_sarves(int id) = 0;
 };
 //class student_sarves imp
 class student_sarves_imp :public student_sarves
 { 
 private:
-	student_prository_imp s1;
+	student_prository_imp  s1;
 	ss student;
 	validation_student v1;
 	validation_sarves vs1;
@@ -66,6 +67,18 @@ public:
 		
 	}
 
+	void remove_student_sarves(int id)
+	{
+		int index = s1.remove_student(id);
+		if (!index)
+		{
+			vs1.no_exist("Student", id);
+		}
+		else
+			cout << "Sucess Remove Student With Id [" << id << "]" << endl;
+	}
+
+
 };
 
 /////////////////////////////    course   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -75,6 +88,7 @@ public:
 	virtual int addd_course_sarves(cours course) = 0;
 	virtual cours show_course_sarves(int id) = 0;
 	virtual void edit_course_sarves(cours course) = 0;
+	virtual void remove_course_sarves(int id) = 0;
 };
 //class course_sarves imp
 class course_sarves_imp :public course_sarves
@@ -136,6 +150,17 @@ public:
 		}
 		
 	}
+	void remove_course_sarves(int id)
+	{
+		int index = c1.remove_course(id);
+		if (!index)
+		{
+			vs1.no_exist("Course", id);
+		}
+		else
+			cout << "Sucess Remove Course With Id [" << id << "]" << endl;
+	}
+
 
 
 };
@@ -148,6 +173,7 @@ public:
 	virtual int Add_techear_sarves(teacher techears) = 0;
 	virtual teacher show_techear_sarves(int id) = 0;
 	virtual void edit_techear_sarves(teacher techears) = 0;
+	virtual void remove_techear_sarves(int id) = 0;
 };
 //class teacher_sarves imp
 class techear_sarves_imp :public techear_sarves
@@ -209,5 +235,17 @@ public:
 		}
 		
 	}
+
+	void remove_techear_sarves(int id)
+	{
+		int index = t1.remove_teacher(id);
+		if (!index)
+		{
+			vs1.no_exist("Techaer", id);
+		}
+		else
+			cout << "Sucess Remove Techaer With Id [" << id << "]" << endl;
+	}
+
 
 };

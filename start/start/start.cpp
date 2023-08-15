@@ -26,8 +26,9 @@ void update_Data_student();
 void update_Data_cours();
 void update_Data_techear();
 void check_id(int id, string type);
-
-
+void remove_student();
+void remove_course();
+void remove_techear();
 
 
 int main()
@@ -182,7 +183,8 @@ void switch_student()
         add_new_student();
         break;
     case 2:
-        cout << "Remove procces" << endl;
+        show_process();
+        remove_student();
         break;
     case 3:
         show_process();
@@ -220,8 +222,9 @@ void switch_course()
         add_new_course();
         break;
     case 2:
-
-        cout << "Remove Course" << endl;
+        show_process();
+        remove_course();
+       
         break;
     case 3:
         show_process();
@@ -255,7 +258,8 @@ void switch_techear()
         add_new_techear();
         break;
     case 2:
-        cout << "Remove Teacher" << endl;
+        show_process();
+        remove_techear();
         break;
     case 3:
         show_process();
@@ -458,6 +462,32 @@ void check_id(int id, string type)
 
 
 
+void remove_student()
+{
+
+    cout << "Please Enter Id Student = ";
+    cin >> id; cout << endl;
+    student_countol s1;
+    s1.remove_student_control(id);
+}
+
+void remove_course()
+{
+
+    cout << "Please Enter Id Course = ";
+    cin >> id; cout << endl;
+    course_countrol c1;
+    c1.remove_course_control(id);
+}
+
+void remove_techear()
+{
+
+    cout << "Please Enter Id Techear = ";
+    cin >> id; cout << endl;
+    techear_countrol t1;
+    t1.remove_techear_control(id);
+}
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
