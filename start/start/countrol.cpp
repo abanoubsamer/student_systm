@@ -32,6 +32,15 @@ public:
 		
 		
 	}
+
+	void edit_student_control(ss student)
+	{
+		s2.edit_student_sarves(student);
+	}
+
+
+
+
 };
 /////////////////////////////    course   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 //  course_countrol
@@ -69,6 +78,11 @@ public:
 	}
 
 
+	void edit_course_control(cours course)
+	{
+		c1.edit_course_sarves(course);
+	}
+
 };
 /////////////////////////////    teacher    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///  teacher_countorl
@@ -87,7 +101,7 @@ public:
 
 	}
 
-	void show_student_by_id_control(int id)
+	void show_techear_by_id_control(int id)
 	{
 		t2 = t1.show_techear_sarves(id);
 		if (t2.get_id())
@@ -104,6 +118,12 @@ public:
 
 		}
 
+	}
+
+
+	void edit_techear_control(teacher techears)
+	{
+		t1.edit_techear_sarves(techears);
 	}
 
 };

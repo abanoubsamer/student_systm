@@ -8,6 +8,7 @@ class student_sarves {
 public:
 	virtual int Add_student_serves(ss student) = 0;
 	virtual ss show_student_sarves(int id) = 0;
+	virtual void edit_student_sarves(ss student) = 0;
 };
 //class student_sarves imp
 class student_sarves_imp :public student_sarves
@@ -49,6 +50,16 @@ public:
 
 	}
 	
+	void edit_student_sarves(ss student)
+	{
+		int index = s1.edit_student(student);
+		if (!index)
+		{
+			vs1.no_exist("Student", student.get_id());
+		}
+		else
+			cout << "Sucess Edit Student With Id [" << student.get_id() << "]" << endl;
+	}
 
 };
 
@@ -58,6 +69,7 @@ class course_sarves {
 public:
 	virtual int addd_course_sarves(cours course) = 0;
 	virtual cours show_course_sarves(int id) = 0;
+	virtual void edit_course_sarves(cours course) = 0;
 };
 //class course_sarves imp
 class course_sarves_imp :public course_sarves
@@ -104,6 +116,16 @@ public:
 
 	}
 
+	void edit_course_sarves(cours course)
+	{
+		int index = c1.edit_course(course);
+		if (!index)
+		{
+			vs1.no_exist("Course", course.get_id());
+		}
+		else
+			cout << "Sucess Edit Course With Id [" << course.get_id() << "]" << endl;
+	}
 
 
 };
@@ -115,6 +137,7 @@ class techear_sarves {
 public:
 	virtual int Add_techear_sarves(teacher techears) = 0;
 	virtual teacher show_techear_sarves(int id) = 0;
+	virtual void edit_techear_sarves(teacher techears) = 0;
 };
 //class teacher_sarves imp
 class techear_sarves_imp :public techear_sarves
@@ -153,13 +176,24 @@ public:
 		if (teach1.get_id() == 0)
 		{
 		
-			vs1.no_exist("techaer", id);
+			vs1.no_exist("Techaer", id);
 
 		}
 		
 			return teach1;
 		
 
+	}
+
+	void edit_techear_sarves(teacher techears)
+	{
+		int index = t1.edit_teacher(techears);
+		if (!index)
+		{
+			vs1.no_exist("Techaer", techears.get_id());
+		}
+		else
+			cout << "Sucess Edit Techaer With Id [" << techears.get_id() << "]" << endl;
 	}
 
 };

@@ -19,7 +19,12 @@ void show_process();
 void Show_Student_id();
 void Show_cours_id();
 void Show_techear_id();
-
+ss Enter_Data_student();
+cours Enter_Data_cours();
+teacher Enter_Data_techear();
+void update_Data_student();
+void update_Data_cours();
+void update_Data_techear();
 
 
 
@@ -131,36 +136,8 @@ void showlist(string value)
 void add_new_student()
 {
     ss s1;
-    string name;
-    float gpa;
-    string speciale;
-    string phone;
-    int age;
-    int level;
-    cout << "Enter Student Name :";
-    cin >> name;
-    s1.set_name(name);
-    cout << "Enter Student age :";
-    cin >> age;
-    s1.set_age(age);
-    cout << "Enter Student phone :";
-    cin >> phone;
-    s1.set_phone(phone);
-    cout << "Enter Student level :";
-    cin >> level;
-    s1.set_level(level);
-    if (level > 2)      // hna ana oltlh lw hwa fe sana 3 kdh hyt5ss
-    {
-        cout << "Enter Student speciales :";
-        cin >> speciale;
-        s1.set_speciales(speciale);
-    }
-    else {          // hna lw hwa a2l mn sana 3 kdh dh mlho4 t5ss
-        s1.set_speciales("default");
-    }
-    cout << "Enter Student GPA :";
-    cin >> gpa;
-    s1.set_gpa(gpa);
+    s1= Enter_Data_student();
+    
   student_countol st;
    id = st.add_student_control(s1);
    if (!id)
@@ -177,15 +154,7 @@ void add_new_student()
 
 void add_new_course()
 {
-    cours c1;
-    string name;
-    int hour ;
-   cout << "Enter course Name :";
-    cin >> name;
-   c1.set_name(name);
-   cout << "Enter Course Hour :";
-   cin >> hour;
-   c1.set_hour(hour);
+    cours c1 = Enter_Data_cours();
    course_countrol cc1;
    id = cc1.addd_course_countol(c1);
    if (!id)
@@ -202,28 +171,7 @@ void add_new_course()
 
 void add_new_techear()
 {
-    teacher t1;
-    string name;
-    int age;
-    string phone;
-    string speciales;
-    double saleary;
-    cout << "Enter Techear Name :";
-    cin >> name;
-    t1.set_name(name);
-    cout << "Enter Techear age :";
-    cin >> age;
-    t1.set_age(age);
-    cout << "Enter Techear phone :";
-    cin >> phone;
-    t1.set_phone(phone);
-    cout << "Enter Techear speciales :";
-    cin >> speciales;
-    t1.set_speciales(speciales);
-    cout << "Enter Student saleary :";
-    cin >> saleary;
-    t1.set_saleary(saleary);
-    
+    teacher t1=Enter_Data_techear();
     techear_countrol tc1;
     id = tc1.add_techear_control(t1);
     if (!id)
@@ -250,7 +198,8 @@ void switch_student()
         cout << "Remove procces" << endl;
         break;
     case 3:
-        cout << "Edit procces" << endl;
+        show_process();
+        update_Data_student();
         break;
     case 4:
         cout << "Show procces" << endl;
@@ -288,7 +237,8 @@ void switch_course()
         cout << "Remove Course" << endl;
         break;
     case 3:
-        cout << "Edit Course" << endl;
+        show_process();
+        update_Data_cours();
         break;
     case 4:
         cout << "Show Course" << endl;
@@ -321,7 +271,8 @@ void switch_techear()
         cout << "Remove Teacher" << endl;
         break;
     case 3:
-        cout << "Edit Teacher" << endl;
+        show_process();
+        update_Data_techear();
         break;
     case 4:
         cout << "Show Teacher" << endl;
@@ -375,16 +326,135 @@ void Show_techear_id()
     cin >> id; cout << endl;
 
     techear_countrol t1;
-    t1.show_student_by_id_control(id);
+    t1.show_techear_by_id_control(id);
 
 }
 
+////////////////// Enter_Data_the_Student \\\\\\\\\\\\\\\\\
+
+ss Enter_Data_student()
+{
+    ss s1;
+    string name;
+    float gpa;
+    string speciale;
+    string phone;
+    int age;
+    int level;
+    cout << "Enter Student Name :";
+    cin >> name;
+    s1.set_name(name);
+    cout << "Enter Student age :";
+    cin >> age;
+    s1.set_age(age);
+    cout << "Enter Student phone :";
+    cin >> phone;
+    s1.set_phone(phone);
+    cout << "Enter Student level :";
+    cin >> level;
+    s1.set_level(level);
+    if (level > 2)      // hna ana oltlh lw hwa fe sana 3 kdh hyt5ss
+    {
+        cout << "Enter Student speciales :";
+        cin >> speciale;
+        s1.set_speciales(speciale);
+    }
+    else {          // hna lw hwa a2l mn sana 3 kdh dh mlho4 t5ss
+        s1.set_speciales("default");
+    }
+    cout << "Enter Student GPA :";
+    cin >> gpa;
+    s1.set_gpa(gpa);
+
+    return s1;
+}
+
+////////////////// Enter_Data_the_cours \\\\\\\\\\\\\\\\\
+
+cours Enter_Data_cours()
+{
+    cours c1;
+    string name;
+    int hour;
+    cout << "Enter course Name :";
+    cin >> name;
+    c1.set_name(name);
+    cout << "Enter Course Hour :";
+    cin >> hour;
+    c1.set_hour(hour);
+    return c1;
+}
+
+////////////////// Enter_Data_the_techear \\\\\\\\\\\\\\\\\
+
+teacher Enter_Data_techear()
+{
+    teacher t1;
+    string name;
+    int age;
+    string phone;
+    string speciales;
+    double saleary;
+    cout << "Enter Techear Name :";
+    cin >> name;
+    t1.set_name(name);
+    cout << "Enter Techear age :";
+    cin >> age;
+    t1.set_age(age);
+    cout << "Enter Techear phone :";
+    cin >> phone;
+    t1.set_phone(phone);
+    cout << "Enter Techear speciales :";
+    cin >> speciales;
+    t1.set_speciales(speciales);
+    cout << "Enter Student saleary :";
+    cin >> saleary;
+    t1.set_saleary(saleary);
+
+    return t1;
+}
 
 
+////////////////// update_Data_student \\\\\\\\\\\\\\\\\
+
+void update_Data_student()
+{
+    ss s1;
+    s1 = Enter_Data_student();
+    cout << "Enter Id Student :";
+    cin >> id;
+    s1.set_id(id);
+    student_countol c1;
+    c1.edit_student_control(s1);
+}
 
 
+////////////////// update_Data_cours \\\\\\\\\\\\\\\\\
+
+void update_Data_cours()
+{
+    cours c1;
+    c1 = Enter_Data_cours();
+    cout << "Enter Id Cours :";
+    cin >> id;
+    c1.set_id(id);
+    course_countrol cc1;
+    cc1.edit_course_control(c1);
+}
 
 
+////////////////// update_Data_techear \\\\\\\\\\\\\\\\\
+
+void update_Data_techear()
+{
+    teacher t1;
+    t1 = Enter_Data_techear();
+    cout << "Enter Id Techear :";
+    cin >> id;
+    t1.set_id(id);
+   techear_countrol tc1;
+    tc1.edit_techear_control(t1);
+}
 
 
 

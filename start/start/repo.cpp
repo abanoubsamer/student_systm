@@ -9,6 +9,7 @@ class student_prository {
 public:
 	virtual int add_student(ss student)=0;
 	virtual ss show_student_by_id(int id) = 0;
+	virtual int edit_student(ss student) = 0;
 	
 };
 //class student_prository imp
@@ -58,6 +59,23 @@ public:
 		
 	}
 
+	int edit_student(ss student )
+	{
+		int index = 0;
+		int i;
+		for (i = 0; i < d1.index_Student; i++)
+		{
+			if (d1.Student[i].get_id() == student.get_id())
+			{
+				d1.Student[i] = student;
+				index = 1;
+				
+			}
+			
+		}
+	       return index;
+	 }
+
 };
 
 
@@ -69,6 +87,7 @@ class course_prository {
 public:
 	virtual int add_course(cours course) = 0;
 	virtual cours show_cours_by_id(int id) = 0;
+	virtual int edit_course(cours course) = 0;
 
 };
 //class course_prository imp
@@ -111,6 +130,24 @@ public:
 
 	}
 
+
+	int edit_course(cours course)
+	{
+		int index = 0;
+		int i;
+		for (i = 0; i < d2.index_coursess; i++)
+		{
+			if (d2.coursess[i].get_id() == course.get_id())
+			{
+				d2.coursess[i] = course;
+				index = 1;
+
+			}
+
+		}
+		return index;
+	}
+
 };
 
 
@@ -120,6 +157,7 @@ class teacher_prository {
 public:
 	virtual int add_teacher(teacher tech) = 0;
 	virtual teacher show_teacher_by_id(int id) = 0;
+	virtual int edit_teacher(teacher tech) = 0;
 };
 //class teacher_prository imp
 class teacher_prository_imp :public teacher_prository
@@ -161,6 +199,29 @@ public:
 				return invalid;
 
 	}
+
+
+
+	int edit_teacher(teacher tech)
+	{
+		int index = 0;
+		int i;
+		for (i = 0; i < d3.index_teacher; i++)
+		{
+			if (d3.theachers[i].get_id() == tech.get_id())
+			{
+				d3.theachers[i] = tech;
+				index = 1;
+
+			}
+
+		}
+		return index;
+	}
+
+
+
+
 };
 
 
