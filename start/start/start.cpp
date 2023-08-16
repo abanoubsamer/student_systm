@@ -29,6 +29,13 @@ void check_id(int id, string type);
 void remove_student();
 void remove_course();
 void remove_techear();
+void Enter_id(string type);
+void show_all_Student();
+void show_all_Course();
+void show_all_Techear();
+
+
+
 
 
 int main()
@@ -39,7 +46,6 @@ int main()
     while (true)
     {
          display();
-        //cout << " 1 - Add Course"  << "\t\t\t" << " 6 - Remove Course" << endl;
         cin >> process;
         switch (process)
         {
@@ -191,7 +197,8 @@ void switch_student()
         update_Data_student();
         break;
     case 4:
-        cout << "Show procces" << endl;
+        show_process();
+        show_all_Student();
         break;
     case 5:
         show_process();
@@ -231,7 +238,8 @@ void switch_course()
         update_Data_cours();
         break;
     case 4:
-        cout << "Show Course" << endl;
+        show_process();
+        show_all_Course();
         break;
     case 5:
         show_process();
@@ -266,7 +274,8 @@ void switch_techear()
         update_Data_techear();
         break;
     case 4:
-        cout << "Show Teacher" << endl;
+        show_process();
+        show_all_Techear();
         break;
     case 5:
         show_process();
@@ -303,7 +312,7 @@ void Show_cours_id()
     cout << "Please Enter Id Cours = ";
     cin >> id; cout << endl;
     course_countrol c1;
-    c1.show_student_by_id_control(id);
+    c1.show_course_by_id_control(id);
 
 }
 
@@ -448,7 +457,7 @@ void update_Data_techear()
 }
 
 
-////////////////// check_id \\\\\\\\\\\\\\\\\
+////////////////// check_id \\\\\\\\\\\\\\\\\ hna a7na bn3ml check 3la id lw rag3 by zero fa kdh dh fe 7aga 8lt fe al validation 
 
 void check_id(int id, string type)
 {
@@ -460,34 +469,72 @@ void check_id(int id, string type)
         cout << "Success Added " <<type<<" with id[" << id << "]" << endl;
 }
 
+////////////////// Enter_id \\\\\\\\\\\\\\\\\ hna a7na bna5d ay id bn3mloh [cin]
 
+void Enter_id(string type)
+{
+    cout << "Please Enter Id "<<type<<" = ";
+    cin >> id; cout << endl;
+}
+
+////////////////// remove_student \\\\\\\\\\\\\\\\\
 
 void remove_student()
 {
 
-    cout << "Please Enter Id Student = ";
-    cin >> id; cout << endl;
+    Enter_id("Student");
     student_countol s1;
     s1.remove_student_control(id);
 }
 
+////////////////// remove_course \\\\\\\\\\\\\\\\\
+
 void remove_course()
 {
 
-    cout << "Please Enter Id Course = ";
-    cin >> id; cout << endl;
+    Enter_id("Course");
     course_countrol c1;
     c1.remove_course_control(id);
 }
 
+////////////////// remove_techear \\\\\\\\\\\\\\\\\
+
 void remove_techear()
 {
-
-    cout << "Please Enter Id Techear = ";
-    cin >> id; cout << endl;
+    Enter_id("Techear");
     techear_countrol t1;
     t1.remove_techear_control(id);
 }
+
+////////////////// show_all_Student \\\\\\\\\\\\\\\\\
+
+void show_all_Student()
+{
+    student_countol sc;
+    sc.show_all_student_control();
+
+}
+
+////////////////// show_all_Course \\\\\\\\\\\\\\\\\
+
+void show_all_Course()
+{
+    course_countrol cc1;
+    cc1.show_all_course_control();
+
+}
+
+////////////////// show_all_Techear \\\\\\\\\\\\\\\\\
+
+void show_all_Techear()
+{
+    techear_countrol tc1;
+    tc1.show_all_techear_control();
+
+}
+
+
+
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 

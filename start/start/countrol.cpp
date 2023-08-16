@@ -16,6 +16,7 @@ public:
 
 
 	}
+
 	void show_student_by_id_control(int id)
 	{
 		student=s2.show_student_sarves(id);
@@ -43,6 +44,10 @@ public:
 		s2.remove_student_sarves(id);
 	}
 
+	void show_all_student_control()
+	{
+		s2.show_all_student_sarves();
+	}
 
 };
 /////////////////////////////    course   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -62,7 +67,7 @@ public:
 
 	}
 
-	void show_student_by_id_control(int id)
+	void show_course_by_id_control(int id)
 	{
 		c2 = c1.show_course_sarves(id);
 		if (c2.get_id())
@@ -80,7 +85,6 @@ public:
 
 	}
 
-
 	void edit_course_control(cours course)
 	{
 		c1.edit_course_sarves(course);
@@ -91,6 +95,10 @@ public:
 		c1.remove_course_sarves(id);
 	}
 
+	void show_all_course_control()
+	{
+		c1.show_all_course_sarves();
+	}
 
 };
 /////////////////////////////    teacher    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -129,14 +137,19 @@ public:
 
 	}
 
-
 	void edit_techear_control(teacher techears)
 	{
 		t1.edit_techear_sarves(techears);
 	}
+
 	void remove_techear_control(int id)
 	{
 		t1.remove_techear_sarves(id);
 	}
 
+	void show_all_techear_control()
+	{
+		t1.show_all_techear_sarves();
+	}
+	
 };

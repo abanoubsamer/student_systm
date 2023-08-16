@@ -10,6 +10,7 @@ public:
 	virtual ss show_student_sarves(int id) = 0;
 	virtual void edit_student_sarves(ss student) = 0;
 	virtual void remove_student_sarves(int id) = 0;
+	virtual void show_all_student_sarves() = 0;
 };
 //class student_sarves imp
 class student_sarves_imp :public student_sarves
@@ -37,6 +38,7 @@ public:
 			
 	         return 0;//hna m3anha anha md5lt4 fe wal if statment
 	}
+
 	ss show_student_sarves(int id)
 	{
 		student = s1.show_student_by_id(id);
@@ -78,7 +80,10 @@ public:
 			cout << "Sucess Remove Student With Id [" << id << "]" << endl;
 	}
 
-
+	void show_all_student_sarves()
+	{
+		s1.show_all_student();
+	}
 };
 
 /////////////////////////////    course   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -89,6 +94,7 @@ public:
 	virtual cours show_course_sarves(int id) = 0;
 	virtual void edit_course_sarves(cours course) = 0;
 	virtual void remove_course_sarves(int id) = 0;
+	virtual void show_all_course_sarves() = 0;
 };
 //class course_sarves imp
 class course_sarves_imp :public course_sarves
@@ -119,6 +125,7 @@ public:
 
 		return 0;
 	}
+
 	cours show_course_sarves(int id)
 	{
 		cours1 = c1.show_cours_by_id(id);
@@ -150,6 +157,7 @@ public:
 		}
 		
 	}
+
 	void remove_course_sarves(int id)
 	{
 		int index = c1.remove_course(id);
@@ -161,7 +169,10 @@ public:
 			cout << "Sucess Remove Course With Id [" << id << "]" << endl;
 	}
 
-
+	void show_all_course_sarves()
+	{
+		c1.show_all_course();
+	 }
 
 };
 
@@ -174,6 +185,7 @@ public:
 	virtual teacher show_techear_sarves(int id) = 0;
 	virtual void edit_techear_sarves(teacher techears) = 0;
 	virtual void remove_techear_sarves(int id) = 0;
+	virtual void show_all_techear_sarves() = 0;
 };
 //class teacher_sarves imp
 class techear_sarves_imp :public techear_sarves
@@ -247,5 +259,9 @@ public:
 			cout << "Sucess Remove Techaer With Id [" << id << "]" << endl;
 	}
 
+	void show_all_techear_sarves()
+	{
+		t1.show_all_teacher();
+	}
 
 };

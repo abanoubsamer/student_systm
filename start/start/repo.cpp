@@ -11,6 +11,8 @@ public:
 	virtual ss show_student_by_id(int id) = 0;
 	virtual int edit_student(ss student) = 0;
 	virtual int remove_student(int id) = 0;
+	virtual void show_all_student() = 0;
+
 	
 };
 //class student_prository imp
@@ -85,13 +87,29 @@ public:
 		{
 			if (d1.Student[i].get_id() == id)
 			{
-				d1.Student[i].set_id(0);
-				index = 1;
-
+				for (int j = i; j < d1.index_Student - 1; j++)
+				{
+					d1.Student[j] = d1.Student[j + 1];
+				}
+				d1.index_Student--	;  // Reduce the total count of students
+				index = 1;  // Indicate that the student was found and removed
+				break;
+					
 			}
 
 		}
 		return index;
+	}
+
+	void show_all_student()
+	{
+		int i;
+		cout << "\t\tId\t\tName\t\tAge\t\tPhoneNumber\t\tGpa\t\tSpeciales" << endl;
+		for (i = 1; i < d1.index_Student; i++) //hna hwa hy3od ylf l7d a5er al index ale anta 3mloh bs -1
+		{
+			cout << "\t\t" << d1.Student[i].get_id() << "\t\t" << d1.Student[i].get_name() << "\t" << d1.Student[i].get_age() << "\t\t" << d1.Student[i].get_phone() << "\t\t" << d1.Student[i].get_gpa() << "\t\t" << d1.Student[i].get_speciales() << endl;
+			
+		}
 	}
 	
 
@@ -109,7 +127,7 @@ public:
 	virtual cours show_cours_by_id(int id) = 0;
 	virtual int edit_course(cours course) = 0;
 	virtual int remove_course(int id) = 0;
-
+	virtual void show_all_course() = 0;
 };
 //class course_prository imp
 class course_prository_imp :public course_prository
@@ -132,6 +150,7 @@ public:
 		}
 		return course.get_id();
 	}
+
 	cours show_cours_by_id(int id)
 	{
 		int i;
@@ -151,7 +170,6 @@ public:
 
 	}
 
-
 	int edit_course(cours course)
 	{
 		int index = 0;
@@ -168,6 +186,7 @@ public:
 		}
 		return index;
 	}
+
 	int remove_course(int id)
 	{
 		int index = 0;
@@ -176,8 +195,13 @@ public:
 		{
 			if (d2.coursess[i].get_id() == id)
 			{
-				d2.coursess[i].set_id(0);
-				index = 1;
+				for (int j = i; j < d2.index_coursess - 1; j++)
+				{
+					d2.coursess[j] = d2.coursess[j + 1];
+				}
+				d2.index_coursess--;  // Reduce the total count of students
+				index = 1;  // Indicate that the student was found and removed
+				break;
 
 			}
 
@@ -185,6 +209,16 @@ public:
 		return index;
 	}
 
+	void show_all_course()
+	{
+		int i;
+		cout << "\t\tId\t\tName\t\tHour" << endl;
+		for (i = 1; i < d2.index_coursess; i++) //hna hwa hy3od ylf l7d a5er al index ale anta 3mloh bs -1
+		{
+			cout << "\t\t" << d2.coursess[i].get_id() << "\t\t" << d2.coursess[i].get_name() << "\t\t" << d2.coursess[i].get_hour() << endl;
+
+		}
+	}
 
 
 
@@ -199,6 +233,7 @@ public:
 	virtual teacher show_teacher_by_id(int id) = 0;
 	virtual int edit_teacher(teacher tech) = 0;
 	virtual int remove_teacher(int id) = 0;
+	virtual void show_all_teacher() = 0;
 };
 //class teacher_prository imp
 class teacher_prository_imp :public teacher_prository
@@ -220,7 +255,7 @@ public:
 			
 		}
 		return tech.get_id();
-	}
+	} 
 
 	teacher show_teacher_by_id(int id)
 	{
@@ -241,8 +276,6 @@ public:
 
 	}
 
-
-
 	int edit_teacher(teacher tech)
 	{
 		int index = 0;
@@ -260,7 +293,6 @@ public:
 		return index;
 	}
 
-
 	int remove_teacher(int id)
 	{
 		int index = 0;
@@ -269,14 +301,32 @@ public:
 		{
 			if (d3.theachers[i].get_id() == id)
 			{
-				d3.theachers[i].set_id(0);
-				index = 1;
+				for (int j = i; j < d3.index_teacher - 1; j++)
+				{
+					d3.theachers[j] = d3.theachers[j + 1];
+				}
+				d3.index_teacher--;  // Reduce the total count of students
+				index = 1;  // Indicate that the student was found and removed
+				break;
 
 			}
 
 		}
 		return index;
 	}
+
+	void show_all_teacher()
+	{
+		int i;
+		cout << "\t\tId\t\tName\t\tAge\t\tPhoneNumber\t\tSaleary" << endl;
+		for (i = 1; i < d3.index_teacher; i++) //hna hwa hy3od ylf l7d a5er al index ale anta 3mloh bs -1
+		{
+			cout << "\t\t" << d3.theachers[i].get_id() << "\t\t" << d3.theachers[i].get_name() << "\t" << d3.theachers[i].get_age() << "\t\t" << d3.theachers[i].get_phone() << "\t\t" << d3.theachers[i].get_saleary() << endl;
+
+		}
+	}
+	
+
 
 };
 
